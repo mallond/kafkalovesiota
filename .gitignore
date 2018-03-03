@@ -57,3 +57,7 @@ typings/
 # dotenv environment variables file
 .env
 
+tempnotes.txt
+.idea
+full-stack-build
+
