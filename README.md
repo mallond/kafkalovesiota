@@ -26,9 +26,3 @@ Zookeeper Navigator UI
 Kafka Manager 
 1. http://sheepkiller:900o
 
-#### Handy Dandy Scratch Pad
-- docker rm -f $(docker ps -aq)
-- docker images
-- docker rmi $(docker images -a -q)
-- docker-compose up
-- docker inspect <image> 
