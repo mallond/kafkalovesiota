@@ -3,7 +3,7 @@ A simple development environment setup for Kafka and IOTA experiments
 
 ## Kafka full-stack compose
 
-``
+```
 Place the host names in /etc/hosts (mac)
 127.0.0.1     zoo1
 127.0.0.1     kafka1
