@@ -1,5 +1,7 @@
-# kafkalovesiota
+# kafkalovesiota 
 A simple development environment setup for Kafka and IOTA experiments
+
+>What is Kafka? A distributed replicated log - not a messaging system
 
 ![kafka-logo-no-text](https://user-images.githubusercontent.com/993459/36943840-04009b4c-1f56-11e8-8191-d848d85b83ca.png)
 
