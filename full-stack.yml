@@ -38,7 +38,7 @@ services:
       - ./full-stack-build/zoo3/data:/data
       - ./full-stack-build/zoo3/datalog:/datalog
   kafka1:
-    image: confluentinc/cp-kafka:4.0.0
+    image: confluentinc/cp-kafka:4.0.0-3
     hostname: kafka1
     ports:
       - "9092:9092"
@@ -48,6 +48,7 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: "zoo1:2181,zoo2:2182,zoo3:2183"
       KAFKA_BROKER_ID: 1
       KAFKA_LOG4J_LOGGERS: "kafka.controller=INFO,kafka.producer.async.DefaultEventHandler=INFO,state.change.logger=INFO"
+      JMX_PORT: 8082
     volumes:
       - ./full-stack-build/kafka1/data:/var/lib/kafka/data
     depends_on:
@@ -55,7 +56,7 @@ services:
       - zoo2
       - zoo3
   kafka2:
-    image: confluentinc/cp-kafka:4.0.0
+    image: confluentinc/cp-kafka:4.0.0-3
     hostname: kafka2
     ports:
       - "9093:9093"
@@ -65,6 +66,7 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: "zoo1:2181,zoo2:2182,zoo3:2183"
       KAFKA_BROKER_ID: 2
       KAFKA_LOG4J_LOGGERS: "kafka.controller=INFO,kafka.producer.async.DefaultEventHandler=INFO,state.change.logger=INFO"
+      JMX_PORT: 8082
     volumes:
       - ./full-stack-build/kafka2/data:/var/lib/kafka/data
     depends_on:
@@ -72,7 +74,7 @@ services:
       - zoo2
       - zoo3
   kafka3:
-    image: confluentinc/cp-kafka:4.0.0
+    image: confluentinc/cp-kafka:4.0.0-3
     hostname: kafka3
     ports:
       - "9094:9094"
@@ -82,6 +84,7 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: "zoo1:2181,zoo2:2182,zoo3:2183"
       KAFKA_BROKER_ID: 3
       KAFKA_LOG4J_LOGGERS: "kafka.controller=INFO,kafka.producer.async.DefaultEventHandler=INFO,state.change.logger=INFO"
+      JMX_PORT: 8082
     volumes:
       - ./full-stack-build/kafka3/data:/var/lib/kafka/data
     depends_on:

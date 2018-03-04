@@ -48,7 +48,20 @@ Blizzard node-rdkafka
 
 1 https://github.com/Blizzard/node-rdkafka
 
+Kafkat CLI tool
+
+1. https://github.com/airbnb/kafkat
+
+Kafka bin
+
+1. cd kafka_2.11-1.0.0
+2. http://ronnieroller.com/kafka/cheat-sheet
+3. https://github.com/Landoop/kafka-cheat-sheet
+4. https://gist.github.com/sahilsk/d2a6ec384f5f2333e3fef40a581a97e1
+5. https://gist.github.com/filipefigcorreia/3db4c7e525581553e17442792a2e7489
+
 Examples
 
 1. Producer: node src/scaffold/producer.js 
 2. Consumer: node src/scaffold/consumer-flow.js
+

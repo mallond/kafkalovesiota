@@ -28,7 +28,7 @@ producer.on('event.error', function(err) {
 
 //counter to stop this sample after maxMessages are sent
 var counter = 0;
-var maxMessages = 1000;
+var maxMessages = 100000;
 
 producer.on('delivery-report', function(err, report) {
   console.log('delivery-report: ' + JSON.stringify(report));
