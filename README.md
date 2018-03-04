@@ -67,3 +67,4 @@ Examples
 1. Producer: node src/scaffold/producer.js 
 2. Consumer: node src/scaffold/consumer-flow.js
 
+![iota369](https://user-images.githubusercontent.com/993459/35762946-de9bdea8-0866-11e8-8427-f0924b28b445.png)
