@@ -19,7 +19,7 @@ A simple development environment setup for Kafka and IOTA experiments
 
 +------------+   +-----------+
 |kafka-manager   |zoo navigator
-|sheepkiller:9000|zoona^igator-web:8004
+|sheepkiller:9000|zoonavigator-web:8004
 +------------+   +-----------+
  
 Place the host names in /etc/hosts (mac)
@@ -31,6 +31,8 @@ Place the host names in /etc/hosts (mac)
 127.0.0.1     kafka3
 127.0.0.1     zoonavigator-web
 127.0.0.1     sheepkiller
+
+
 
 Also - for a clean build 
 
@@ -45,8 +47,17 @@ Add the shared files in your docker preference - shared folders
 
 ```
 
+Fullstack Web UI - see YOUR etc/hosts to configure
+
+1. [Zoo-navigator](http://zoonavigator-web:8004)
+2. [Kafka-manager](http://sheepkiller:9000)
+
+
+
 Development Build
+
 1. docker-compose -f full-stack-single.yml up
+2. docker-compose -f full-stack.yml down
 
 Zookeeper monitor zktop
 

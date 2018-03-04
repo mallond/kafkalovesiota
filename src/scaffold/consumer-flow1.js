@@ -17,9 +17,8 @@ var Kafka = require('node-rdkafka');
 
 var consumer = new Kafka.KafkaConsumer({
   //'debug': 'all',
-  'client.id': 'consumer1',
-  'metadata.broker.list': 'kafka1:9092',
-  'group.id': 'consumer-group-a',
+  'group.id': 'consumer',
+  'metadata.broker.list': 'kafka1:9092,kafka2:9093,kafka3:9094',
   'enable.auto.commit': false
 });
 
