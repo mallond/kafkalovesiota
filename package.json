@@ -22,8 +22,10 @@
   },
   "homepage": "https://github.com/mallond/kafkalovesiota#readme",
   "dependencies": {
+    "iota.lib.js": "^0.4.7",
     "node-rdkafka": "^2.2.3",
     "node-zookeeper-client": "^0.2.2",
-    "uuid": "^3.2.1"
+    "uuid": "^3.2.1",
+    "iota": "mallond/iota"
   }
 }
