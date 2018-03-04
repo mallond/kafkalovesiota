@@ -101,4 +101,7 @@ Examples
 
 On the Heap
 
-1. Developing Real-Time Data Pipelines with Kafka https://www.youtube.com/watch?v=GRPLRONVDWY 
+1. Developing Real-Time Data Pipelines with Kafka https://www.youtube.com/watch?v=GRPLRONVDWY
+2. Mesos http://mesos.apache.org/
+3. Mesos and Kafka https://github.com/mesos/kafka
+4. node-rdkafka https://blizzard.github.io/node-rdkafka/current/
