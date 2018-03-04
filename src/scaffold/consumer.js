@@ -31,7 +31,13 @@ stream.on('error', function(err) {
   process.exit(1);
 });
 
-stream.pipe(process.stdout);
+stream.on('data', function(message) {
+  console.log('Got message');
+  var data = JSON.parse(message);
+
+  console.log(JSON.stringify(data));
+});
+
 
 stream.on('error', function(err) {
   console.log(err);
