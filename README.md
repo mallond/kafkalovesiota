@@ -4,11 +4,28 @@ A simple development environment setup for Kafka and IOTA experiments
 ## Kafka full-stack compose
 
 ```
+
 Place the host names in /etc/hosts (mac)
 127.0.0.1     zoo1
+127.0.0.1     zoo2
+127.0.0.1     zoo3
 127.0.0.1     kafka1
+127.0.0.1     kafka2
+127.0.0.1     kafka3
 127.0.0.1     zoonavigator-web
 127.0.0.1     sheepkiller
+
+Also - for a clean build 
+
+Clean up the Docker folders
+$ rm -rf full-stack-build
+
+Clean up nasty docker builds
+$ docker rm $(docker ps -qa --no-trunc --filter "status=exited")
+
+Share
+Add the shared files in your docker preference - shared folders
+
 ```
 
 Development Build
