@@ -98,3 +98,7 @@ Examples
 ![docker](https://user-images.githubusercontent.com/993459/36943874-a1dfa61e-1f56-11e8-9123-bba34f8192bd.png)
 
 ![iota369](https://user-images.githubusercontent.com/993459/35762946-de9bdea8-0866-11e8-8427-f0924b28b445.png)
+
+On the Heap
+
+1. Developing Real-Time Data Pipelines with Kafka https://www.youtube.com/watch?v=GRPLRONVDWY 
