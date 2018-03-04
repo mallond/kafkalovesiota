@@ -16,7 +16,7 @@ var Kafka = require('node-rdkafka');
 var zookeeper = require('node-zookeeper-client');
 var uuidv1 = require('uuid/v1');
 
-var client = zookeeper.createClient('localhost:2181');
+var client = zookeeper.createClient('zoo1:2181,zoo2:2182,zoo3:2183');
 var path = '/singleConsumerOnly';
 
 client.once('connected', function () {
@@ -54,7 +54,7 @@ client.connect();
 
 var stream = Kafka.KafkaConsumer.createReadStream({
   'client.id': 'consumer1',
-  'metadata.broker.list': 'kafka1:9092',
+  'metadata.broker.list': 'kafka1:9092,kafka1:9093,kafka1:9094',
   'group.id': 'consumer-group-a',
   'enable.auto.commit': true
 }, {}, {
