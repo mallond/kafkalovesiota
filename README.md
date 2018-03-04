@@ -14,7 +14,7 @@ Place the host names in /etc/hosts (mac)
 ```
 
 Development Build
-1. docker-compose -f full-stack-singl.yml up
+1. docker-compose -f full-stack-single.yml up
 
 Zookeeper monitor zktop
 1. cd zktop
