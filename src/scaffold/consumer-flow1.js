@@ -17,8 +17,9 @@ var Kafka = require('node-rdkafka');
 
 var consumer = new Kafka.KafkaConsumer({
   //'debug': 'all',
+  'client.id': 'consumer1',
   'metadata.broker.list': 'kafka1:9092',
-  'group.id': 'node-rdkafka-consumer-flow-example',
+  'group.id': 'consumer-group-a',
   'enable.auto.commit': false
 });
 
@@ -52,9 +53,10 @@ consumer.on('data', function(m) {
   counter++;
 
   //committing offsets every numMessages
-  if (counter % numMessages === 0) {
-    consumer.commit(m);
-  }
+  //if (counter % numMessages === 0) {
+  //  //consumer.commitMessage(m);
+  //}
+  consumer.commit();
 
   // Output the actual message contents
   //console.log(JSON.stringify(m));

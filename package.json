@@ -23,6 +23,7 @@
   "homepage": "https://github.com/mallond/kafkalovesiota#readme",
   "dependencies": {
     "node-rdkafka": "^2.2.3",
+    "node-zookeeper-client": "^0.2.2",
     "uuid": "^3.2.1"
   }
 }

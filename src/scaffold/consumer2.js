@@ -16,14 +16,25 @@ var Transform = require('stream').Transform;
 var Kafka = require('node-rdkafka');
 
 var stream = Kafka.KafkaConsumer.createReadStream({
+  'client.id': 'consumer2',
   'metadata.broker.list': 'kafka1:9092',
-  'group.id': 'test',
-  'socket.keepalive.enable': true,
+  'group.id': 'consumer-group-b',
   'enable.auto.commit': true
 }, {}, {
   topics: 'test',
   waitInterval: 0,
   objectMode: false
+});
+
+stream.on('ready', function(arg) {
+  console.log('consumer ready.' + JSON.stringify(arg));
+
+  stream.subscribe(['test']);
+  // Read one message every 1000 milliseconds
+  setInterval(function() {
+    stream.consume(1);
+  }, 1000);
+
 });
 
 stream.on('error', function(err) {
@@ -34,7 +45,6 @@ stream.on('error', function(err) {
 stream.on('data', function(message) {
   console.log('Got message');
   var data = JSON.parse(message);
-
   console.log(JSON.stringify(data));
 });
 

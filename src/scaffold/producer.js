@@ -8,6 +8,7 @@ var uuidv1 = require('uuid/v1');
 
 var producer = new Kafka.Producer({
   //'debug' : 'all',
+  'client.id': 'producer1',
   'metadata.broker.list': 'kafka1:9092',
   'dr_cb': true  //delivery report callback
 });
@@ -27,7 +28,7 @@ producer.on('event.error', function(err) {
 
 //counter to stop this sample after maxMessages are sent
 var counter = 0;
-var maxMessages = 100000;
+var maxMessages = 1000;
 
 producer.on('delivery-report', function(err, report) {
   console.log('delivery-report: ' + JSON.stringify(report));
