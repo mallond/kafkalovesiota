@@ -1,17 +1,12 @@
-/*
- * node-rdkafka - Node.js wrapper for RdKafka C/C++ library
- *
- * Copyright (c) 2016 Blizzard Entertainment
- *
- * This software may be modified and distributed under the terms
- * of the MIT license.  See the LICENSE.txt file for details.
+/**
+ * Created by dm on 3/3/18.
  */
 
 var Kafka = require('node-rdkafka');
 
 var producer = new Kafka.Producer({
   //'debug' : 'all',
-  'metadata.broker.list': 'kafka1:9091,kafka2:9092,kafka3:9093',
+  'metadata.broker.list': 'kafka1:9092',
   'dr_cb': true  //delivery report callback
 });
 
@@ -30,7 +25,7 @@ producer.on('event.error', function(err) {
 
 //counter to stop this sample after maxMessages are sent
 var counter = 0;
-var maxMessages = 100;
+var maxMessages = 100000;
 
 producer.on('delivery-report', function(err, report) {
   console.log('delivery-report: ' + JSON.stringify(report));
@@ -47,13 +42,12 @@ producer.on('ready', function(arg) {
     // if partition is set to -1, librdkafka will use the default partitioner
     var partition = -1;
     producer.produce(topicName, partition, value, key);
-    console.log(key+':'+value);
   }
 
   //need to keep polling for a while to ensure the delivery reports are received
   var pollLoop = setInterval(function() {
+    console.log(counter);
     producer.poll();
-    console.log(counter)
     if (counter === maxMessages) {
       clearInterval(pollLoop);
       producer.disconnect();
