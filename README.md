@@ -67,4 +67,6 @@ Examples
 1. Producer: node src/scaffold/producer.js 
 2. Consumer: node src/scaffold/consumer-flow.js
 
+![docker](https://user-images.githubusercontent.com/993459/36943874-a1dfa61e-1f56-11e8-9123-bba34f8192bd.png)
+
 ![iota369](https://user-images.githubusercontent.com/993459/35762946-de9bdea8-0866-11e8-8427-f0924b28b445.png)
