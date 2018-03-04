@@ -60,4 +60,5 @@ typings/
 tempnotes.txt
 .idea
 full-stack-build
+package-lock.json
 

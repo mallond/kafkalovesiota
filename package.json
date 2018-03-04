@@ -1,0 +1,27 @@
+{
+  "name": "kafkalovesiota",
+  "version": "1.0.0",
+  "description": "Kafka and IOTA playround ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mallond/kafkalovesiota.git"
+  },
+  "keywords": [
+    "iota",
+    "kafka",
+    "node"
+  ],
+  "author": "David Mallon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mallond/kafkalovesiota/issues"
+  },
+  "homepage": "https://github.com/mallond/kafkalovesiota#readme",
+  "dependencies": {
+    "node-rdkafka": "^2.2.3"
+  }
+}
