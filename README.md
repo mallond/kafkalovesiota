@@ -58,6 +58,8 @@ Fullstack Web UI - see YOUR etc/hosts to configure
 
 Development Build
 
+> Docker file3.5	Docker Version 17.12.0+
+
 1. docker-compose -f full-stack-single.yml up
 2. docker-compose -f full-stack.yml down
 
@@ -105,3 +107,4 @@ On the Heap
 2. Mesos http://mesos.apache.org/
 3. Mesos and Kafka https://github.com/mesos/kafka
 4. node-rdkafka https://blizzard.github.io/node-rdkafka/current/
+5. Compose and Swarm https://docs.docker.com/engine/swarm/stack-deploy/#deploy-the-stack-to-the-swarm
