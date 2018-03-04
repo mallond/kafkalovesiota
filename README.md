@@ -34,7 +34,7 @@ Development Build
 Zookeeper monitor zktop
 
 1. cd zktop
-2./zktop.py -v --servers "zoo1:2181"
+2. zktop.py -v --servers "zoo1:2181"
 
 Zookeeper Navigator UI
 
