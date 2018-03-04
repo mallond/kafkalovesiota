@@ -54,7 +54,7 @@ client.connect();
 
 var stream = Kafka.KafkaConsumer.createReadStream({
   'client.id': 'consumer1',
-  'metadata.broker.list': 'kafka1:9092,kafka1:9093,kafka1:9094',
+  'metadata.broker.list': 'kafka1:9092,kafka2:9093,kafka3:9094',
   'group.id': 'consumer-group-a',
   'enable.auto.commit': true
 }, {}, {
