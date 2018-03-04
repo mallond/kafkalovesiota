@@ -9,7 +9,7 @@ var uuidv1 = require('uuid/v1');
 var producer = new Kafka.Producer({
   //'debug' : 'all',
   'client.id': 'producer1',
-  'metadata.broker.list': 'kafka1:9092,kafka1:9093,kafka1:9094',
+  'metadata.broker.list': 'kafka1:9092,kafka2:9093,kafka3:9094',
   'dr_cb': true  //delivery report callback
 });
 
