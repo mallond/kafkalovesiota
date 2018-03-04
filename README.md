@@ -1,4 +1,4 @@
-# [simplepipe.com](https://simpilepipe.com} 
+# [Simplepipe Loves Kafka and IOTA](https://simplepipe.com} 
 A simple development environment setup for Kafka and IOTA experiments
 
 >What is Kafka? A distributed replicated log - not a messaging system
