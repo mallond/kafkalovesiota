@@ -6,7 +6,22 @@ A simple development environment setup for Kafka and IOTA experiments
 ## Kafka full-stack compose
 
 ```
+                           
++------------+   +-----------+  +--------------+
+|zoo1:2181   |   |zoo2:2182  |  |zoo3:2183     |
+|            |   |           |  |              |
++------------+   +-----------+  +--------------+
 
++------------+   +-----------+  +--------------+
+|kafka1:9092 |   |kafka:9093 |  |kafka:9094    |
+|            |   |           |  |              |
++------------+   +-----------+  +--------------+
+
++------------+   +-----------+
+|kafka-manager   |zoo navigator
+|sheepkiller:9000|zoona^igator-web:8004
++------------+   +-----------+
+ 
 Place the host names in /etc/hosts (mac)
 127.0.0.1     zoo1
 127.0.0.1     zoo2
