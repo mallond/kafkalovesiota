@@ -108,3 +108,82 @@ On the Heap
 3. Mesos and Kafka https://github.com/mesos/kafka
 4. node-rdkafka https://blizzard.github.io/node-rdkafka/current/
 5. Compose and Swarm https://docs.docker.com/engine/swarm/stack-deploy/#deploy-the-stack-to-the-swarm
+
+![kafka-logo-no-text](https://user-images.githubusercontent.com/993459/36943840-04009b4c-1f56-11e8-8191-d848d85b83ca.png)
+# Succent Notes - Super Condensed and to the Point
+## What is Kafaka
+
+> Kafka is a simple, high performance, scalable pub/sub messaging system. Created by linked.in and maintained by the 
+Apache foundation 
+   
+## Why
+* Decoupling   
+  1. pub/sub  
+* Less Coordination  
+  1. Let's scale the organization  
+  2. Super easy to add a consumer   
+  3. Consumer can be added without a producer knowing
+* Modern ETL     
+* Scaling ETL is hard  
+* Synchronization is hard  
+* Events the source of truth - not Tables?    
+  1. Streams as Ledgers  
+* Horizontally scale - yea!  
+  1. Near network speeds
+  2. Linear scaling - real story  
+  
+## Retention of Data
+*  Usually within hours or weeks  
+*  Default value is 168 hours which is 7 days  
+
+## Producers
+*  Write messages to topics  
+*  Messages are immutable and are written to the end of the log  
+
+## Consumers
+*  Pull messages from topics  
+*  Track their own **offset** in each partition  
+*  Can replay by an **offset**
+*  When having a unique Group id, per consumer, you have a typical pub/sub process chain  
+*  When sharing the same Group id, per consumer, you have a distributed round-robin process chain  
+*  On failure, consumers restart from the last index  
+*  On failure, shared group id, messages will be assigned to other consumers  
+
+## Brokers
+*  All data is persisted to disk - no keeping of data on the Heap
+*  Topics replicated across the cluster  
+*  Capacity can be added at runtime with zero downtime 
+*  Topics can be larger than any single node can hold  
+*  Need more parallelism, just add more partitions 
+
+## Message Data Formats
+* Only supports byte Arrays, which means that you can store anything :)
+* Schema? Key, value and Timestamp, that' it!
+* Immutable
+* Append only
+* Persisted to disk
+
+## Much more, beyond these condensed notes
+* Zookeeper
+* Leaders
+* Election of a Leader 
+* Producer Partitions
+* Log compaction 
+* Replication
+* Replication is topic based
+* Auto rebalancing  
+* Producer and consumer quotas 
+* Pagecache to Socket - O/S bypasses data directly to the Network
+* Delivery guarantees
+  1. Producer - Async for performance - no guarantee - Network Speeds, super fast!
+  2. Producer - Committed to Leader
+  3. Producer - Committed to leader and committed to a quorum 
+  4. Consumer - at least once (Default)
+  5. Consumer - at most once
+  6. Consumer - effectively once - no dup processing
+  7. Consumer - exactly once - maybe? You will need to keep track of your offset [HARD]
+ 
+
+## Dreaming of Kafka
+
+![kafka_cartoon](https://user-images.githubusercontent.com/993459/38173661-dd9daa56-3587-11e8-84d7-b2d2c4718007.jpg)
